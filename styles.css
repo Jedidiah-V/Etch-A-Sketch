@@ -1,0 +1,15 @@
+.grid-container {
+    display: grid;
+    width: 800px;
+    height: 800px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: lightblue;
+}
+
+#grid-item {
+    background-color: blue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+}
