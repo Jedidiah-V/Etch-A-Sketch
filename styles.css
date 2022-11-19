@@ -2,14 +2,16 @@
     display: grid;
     width: 800px;
     height: 800px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: lightblue;
+    background-color: aliceblue;
+    border: solid 1px blue;
 }
 
-#grid-item {
-    background-color: blue;
-    border-style: solid;
-    border-width: 1px;
-    border-color: red;
+.cell {
+    width: auto;
+    height: auto;
+    border: solid 1px red;
+}
+
+.traced {
+    background-color: lightgray;
 }
