@@ -1,7 +1,11 @@
+:root {
+    --gridspacing: 5px;
+}
+
 .grid-container {
     display: grid;
-    width: 800px;
-    height: 800px;
+    width: 960px;
+    height: 960px;
     background-color: aliceblue;
     border: solid 1px blue;
 }
@@ -9,9 +13,9 @@
 .cell {
     width: auto;
     height: auto;
-    border: solid 1px red;
+    /* border: solid 1px red; */
 }
 
 .traced {
-    background-color: lightgray;
+    background-color: gray;
 }
