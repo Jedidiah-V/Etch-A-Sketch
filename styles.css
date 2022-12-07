@@ -2,20 +2,53 @@
     --gridspacing: 5px;
 }
 
+.slidecontainer {
+    width: 120px;
+}
+
+.slider {
+    width: 100%;
+    height: 25px;
+    
+}
+
 .grid-container {
     display: grid;
     width: 960px;
     height: 960px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     border: solid 1px blue;
 }
 
 .cell {
     width: auto;
     height: auto;
-    /* border: solid 1px red; */
+    /* border: solid 1px lightgray; */
 }
 
 .traced {
     background-color: gray;
+    /* 
+    different ways of getting custom borders:
+    https://blog.logrocket.com/how-to-create-fancy-corners-in-css/
+    clip-path generator:
+    https://www.cssportal.com/css-clip-path-generator/
+    good way of making sure the notches are at a 45 degree angle:
+    https://css-tricks.com/notched-boxes/
+    below code is from said example:
+    */
+    /* --notchSize: 3rem;
+    clip-path: 
+      polygon(
+        0% var(--notchSize), 
+        var(--notchSize) 0%, 
+        calc(100% - var(--notchSize)) 0%, 
+        100% var(--notchSize), 
+        100% calc(100% - var(--notchSize)), 
+        calc(100% - var(--notchSize)) 100%, 
+        var(--notchSize) 100%, 
+        0% calc(100% - var(--notchSize)) 
+      ); */
 }
+
+
