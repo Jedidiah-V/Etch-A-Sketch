@@ -1,23 +1,78 @@
-:root {
-    --gridspacing: 5px;
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* Image credits: HD wallpaper: untitled, pattern, wood, retro, desktop, wallpaper, wooden, surface
+    By: Oksana Kalitseva
+    https://www.pinterest.com/pin/33073378500208974/ */
+    background-image: url("../Images/33b8cf1ce51c2d5aa9a8d8433ce6cc6d.jpg");
+    background-position: 50% 50%;
 }
 
-.slidecontainer {
-    width: 120px;
+h1 {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 70px;
+    color: blanchedalmond;
+}
+
+p {
+    font-family:'Courier New', Courier, monospace;
+    color: blanchedalmond;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.Etchbody {
+    background-color: #E90418;
+    width: 1600px;
+    border-radius: 40px;
+    margin-top: 50px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+}
+
+.sizeChange {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 700px;
 }
 
 .slider {
     width: 100%;
-    height: 25px;
-    
+    -webkit-appearance: none;
+    height: 30px;
+    border-radius: 14px;
+    background-color:darkred;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:blanchedalmond;
+    cursor: grab;
 }
 
 .grid-container {
     display: grid;
-    width: 960px;
-    height: 960px;
-    /* background-color: aliceblue; */
-    border: solid 1px blue;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 30px;
+    background-color: #FAEBD7;
+    /* Inspired by Silinde87's Top Etch-A-Sketch */
+    /* In his "outer-sh" and "inner-sh" classes */
+    /* https://github.com/Silinde87/top-etch-a-sketch/blob/main/style.css */
+    -webkit-box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,0.71);
+    -moz-box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,0.71);
+    box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,0.71);
 }
 
 .cell {
@@ -26,29 +81,11 @@
     /* border: solid 1px lightgray; */
 }
 
-.traced {
-    background-color: gray;
-    /* 
-    different ways of getting custom borders:
-    https://blog.logrocket.com/how-to-create-fancy-corners-in-css/
-    clip-path generator:
-    https://www.cssportal.com/css-clip-path-generator/
-    good way of making sure the notches are at a 45 degree angle:
-    https://css-tricks.com/notched-boxes/
-    below code is from said example:
-    */
-    /* --notchSize: 3rem;
-    clip-path: 
-      polygon(
-        0% var(--notchSize), 
-        var(--notchSize) 0%, 
-        calc(100% - var(--notchSize)) 0%, 
-        100% var(--notchSize), 
-        100% calc(100% - var(--notchSize)), 
-        calc(100% - var(--notchSize)) 100%, 
-        var(--notchSize) 100%, 
-        0% calc(100% - var(--notchSize)) 
-      ); */
+.Etchbody {
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
 }
 
-
+/* Reference */
+/* https://www.w3schools.com/howto/howto_js_rangeslider.asp */

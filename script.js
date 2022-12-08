@@ -1,11 +1,11 @@
 /* Changing grid size */
 
 let slider = document.getElementById("changeSize");
-let output = document.getElementById("size");
-output.innerHTML = slider.value;
+let output = document.getElementById("sizeDisplay");
+output.innerHTML = slider.value + " x " + slider.value;
 
 slider.addEventListener('mouseup', function changeSize() {
-    output.innerHTML = slider.value;
+    output.innerText = slider.value + " x " + slider.value;
     length = Number(slider.value);
     resetGrid(length, totalCells);
 });
@@ -19,18 +19,33 @@ let totalCells = 0;
 function generateGrid (length) {
     presentColumn = 1;
     presentRow = 1;
-    targetColumns = length;
-    targetRows = length;
-    totalCells = targetColumns * targetRows;
+    totalCells = length * length;
     for (i = 1; i <= totalCells; i++) {
         let cell = document.createElement("div");   // Make a cell div
         cell.style.gridRow = presentRow;            // Assign that cell's place in the grid
         cell.style.gridColumn = presentColumn;
         cell.id = "cell #" + i;
         cell.classList.add('cell');                 // Assign the cell it's baseline class
-
+        // Rounding square grid corners 
+        // Inspired by Silinde87's Top Etch-A-Sketch
+        // Within his "buildGrid" function
+        // https://github.com/Silinde87/top-etch-a-sketch/blob/main/script.js
+        if (i==1) {
+            // If the grid has only one cell
+            if (length == 1) {
+                cell.style.borderRadius = "30px"
+            }
+            cell.style.borderTopLeftRadius = "30px";
+        }else if(i==length){
+            cell.style.borderTopRightRadius = "30px";
+        }else if(i==length*length-length+1){
+            cell.style.borderBottomLeftRadius = "30px";
+        }else if(i==length*length){
+            cell.style.borderBottomRightRadius = "30px";
+        }
+        
         presentColumn += 1;
-        if (presentColumn == (targetColumns + 1)) {
+        if (presentColumn == (length + 1)) {
            presentRow += 1;
            presentColumn = 1;
         }
@@ -44,7 +59,11 @@ generateGrid(length); // Make first grid
 
 /* Tracing behavior */
 
-function addListeners() { // Inspired by Scotty's Retro-Sketch
+// Inspired by Scotty's Retro-Sketch
+// His "listen" function
+// https://github.com/bscottnz/esketch
+
+function addListeners() {  
     cells = document.querySelectorAll('.cell')
     for (let i = 0; i < cells.length; i++) {
         cells[i].addEventListener('mousedown', trace);  
@@ -53,12 +72,12 @@ function addListeners() { // Inspired by Scotty's Retro-Sketch
     }
 }
 function trace(e) { 
-    e.target.style.backgroundColor = 'gray';
+    e.target.style.backgroundColor = 'black';
 }
 
 function traceHover(e) {
     if (e.buttons > 0) { // If any mouse button is pressed.
-        e.target.style.backgroundColor = 'gray';
+        e.target.style.backgroundColor = 'black';
     }
 }
 
@@ -75,8 +94,8 @@ function deleteGrid(totalCells) {
 }
 
 function resetGrid(length, totalCells) {
-    deleteGrid(totalCells);                 // Remove previous cells
-    generateGrid(length);                   // Generate new grid
+    deleteGrid(totalCells);  
+    generateGrid(length);                   
     addListeners();
 }
 
