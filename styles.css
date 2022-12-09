@@ -69,7 +69,7 @@ p {
     display: grid;
     width: 600px;
     height: 600px;
-    border-radius: 15px;
+    border-radius: 30px;
     background-color: #FAEBD7;
     /* Inspired by Silinde87's Top Etch-A-Sketch */
     /* In his "outer-sh" and "inner-sh" classes */
