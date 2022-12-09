@@ -4,8 +4,12 @@ body {
     align-items: center;
     /* Image credits: HD wallpaper: untitled, pattern, wood, retro, desktop, wallpaper, wooden, surface
     By: Oksana Kalitseva
-    https://www.pinterest.com/pin/33073378500208974/ */
-    background-image: url("../Images/33b8cf1ce51c2d5aa9a8d8433ce6cc6d.jpg");
+    https://www.pinterest.com/pin/33073378500208974/ 
+    Using a background color instead,
+    due to error "Error with Permissions-Policy header: 
+    Origin trial controlled feature not enabled: 'interest-cohort'." */
+    /* background-image: url("../Images/33b8cf1ce51c2d5aa9a8d8433ce6cc6d.jpg"); */
+    background-color:burlywood;
     background-position: 50% 50%;
 }
 
